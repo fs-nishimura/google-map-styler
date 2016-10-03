@@ -1,0 +1,36 @@
+{
+  "name": "google-map-styer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "tags:update": "git fetch --prune git@github.com:nnishimura/google-map-styler.git '+refs/tags/*:refs/tags/*'",
+    "version": "npm run tags:update && conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "6.10.1",
+    "browser-sync": "^2.6.4",
+    "coffee-script": "~1.7.1",
+    "conventional-changelog": "^1.1.4",
+    "conventional-changelog-cli": "1.3.2",
+    "conventional-changelog-lint": "2.1.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-load-plugins": "^0.8.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-sass": "^1.3.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^0.2.1",
+    "node-notifier": "^4.0.0",
+    "run-sequence": "^1.0.2"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.9.0"
+  }
+}

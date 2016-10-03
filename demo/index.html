@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Google Map</title>
+</head>
+<body>
+    <section>
+    <h1 class="ttl">Google Map Styler Sample Demo</h1>
+
+    <h2 class="ttl-small">Setup</h2>
+    <div class="box-parent">
+    <h3 class="tag-left">yourhtml.html</h3>
+    <pre class="wrap-code"><code class="block-code">
+        <span class="txt-comment">&lt;!-- include googlemap main script --&gt;</span>
+        &lt;script src="http://maps.google.com/maps/api/js?key=INSERT_YOUR_GOOGLEMAP_API_KEY"&gt;&lt;/script&gt;
+        <span class="txt-comment">&lt;!-- include plugin script --&gt;</span>
+        &lt;script src="INSERT_PATH_TO_YOUR_JS_FOLDER/js/googlemapstyler.js"&gt;&lt;/script&gt;
+        <span class="txt-comment">&lt;!-- trigger plugin function --&gt;</span>
+        &lt;script&gt;
+            window.onload=function(){
+                for (var i = document.getElementsByClassName("gmap").length - 1; i &gt;= 0; i--) {
+                    var _map = document.getElementsByClassName("gmap")[i];
+                    var Gmap=new gmapStyler(_map,{});
+                }
+            }
+        &lt;/script&gt;
+        &lt;/body&gt;
+    </code></pre>
+    </div>
+    <br>
+    <div class="box-parent">
+        <h3 class="tag-left">yourcss.css</h3>
+        <pre class="wrap-code"><code class="block-code">
+        <span class="txt-comment">/*define default map size*/</span>
+        .gmap,.gmap-inner{
+            width:INSERT_MAP_WIDTH;
+            height: INSERT_MAP_HEIGHT;
+        }
+        </code></pre>
+    </div>
+    
+
+    <h2 class="ttl-small">Normal map</h2>
+    <div class="box-parent">
+    <h3 class="tag-left">yourhtml.html</h3>
+    <pre class="wrap-code"><code class="block-code">
+        &lt;div class="gmap" data-latitude="INSERT_LATITUDE_HERE" data-longitude="INSERT_LONGTITUDE_HERE"&gt;
+            &lt;div class="gmap-inner"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    </code></pre>
+    </div>
+    <br>
+    <div class="gmap" data-latitude="35.681298" data-longitude="139.7640529">
+    <div class="gmap-inner"></div>
+    </div>
+    <h2 class="ttl-small">Responsive map</h2>
+    <div class="box-parent">
+    <h3 class="tag-left">yourhtml.html</h3>
+    <pre class="wrap-code"><code class="block-code">
+        &lt;div class="gmap flex" data-latitude="INSERT_LATITUDE_HERE" data-longitude="INSERT_LONGTITUDE_HERE"&gt;
+            &lt;div class="gmap-inner"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    </code></pre>
+    </div>
+    <br>
+    <div class="box-parent">
+        <h3 class="tag-left">yourcss.css</h3>
+        <pre class="wrap-code"><code class="block-code">
+        <span class="txt-comment">/*define .flex map size here*/</span>
+        .gmap.flex{
+            width:INSERT_YOUR_MAP_WIDTH;<span class="txt-comment">/*50%,50vw,50em...etc*/</span>
+        }
+        .gmap.flex .gmap-inner{
+            width:100%;
+        }
+        </code></pre>
+    </div>
+    <br>
+    <div class="gmap flex" data-latitude="34.7024854" data-longitude="135.4937566">
+    <div class="gmap-inner"></div>
+    </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <!-- PLEASE USE YOUR OWN API KEY↓ -->
+    <script id="gmap" src="http://maps.google.com/maps/api/js?sensor=false&amp;key=AIzaSyDjIefXhPzajrMoTOHn1d1OjLAP3ZiRbUY"></script>
+    <!-- PLEASE USE YOUR OWN API KEY↑ -->
+    <script type="text/javascript" src="./js/googlemapstyler.js"></script>
+    <script>
+        window.onload=function(){
+            for (var i = document.getElementsByClassName("gmap").length - 1; i >= 0; i--) {
+                var _map = document.getElementsByClassName("gmap")[i];
+                var Gmap=new gmapStyler(_map,{});   
+            }
+        }
+    </script>
+
+</body>
+</html>

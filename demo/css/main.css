@@ -1,0 +1,14 @@
+
+/*define default map size*/
+.gmap,.gmap-inner{
+    width:500px;
+    height: 500px;
+}
+
+/*define .flex map size here*/
+.gmap.flex{
+    width:80%;
+}
+.gmap.flex .gmap-inner{
+    width:100%;
+}
